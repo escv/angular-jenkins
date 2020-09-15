@@ -15,5 +15,15 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('dist') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'dist/*', fingerprint: true
+        }
     }
 }
