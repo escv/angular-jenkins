@@ -23,7 +23,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'dist/*', fingerprint: true
+            archiveArtifacts artifacts: 'dist/angular-jenkins/*', fingerprint: true
         }
     }
 }
