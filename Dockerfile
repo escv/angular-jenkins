@@ -3,7 +3,7 @@ FROM nginx:1.15.8-alpine
 ## Remove default Nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY ./dev/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=build dist/angular-jenkins /usr/share/nginx/html
 
