@@ -5,11 +5,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=build dist/angular-jenkins /usr/share/nginx/html
+COPY ./dist/angular-jenkins /usr/share/nginx/html
 
-RUN echo "mainFileName=\"\$(ls /usr/share/nginx/html/main*.js)\" && \
-          envsubst '\$BACKEND_API_URL \$DEFAULT_LANGUAGE ' < \${mainFileName} > main.tmp && \
-          mv main.tmp  \${mainFileName} && nginx -g 'daemon off;'" > run.sh
-
-ENTRYPOINT ["sh", "run.sh"]
+## ENTRYPOINT ["sh", "nginx -g 'daemon off;'"]
 
