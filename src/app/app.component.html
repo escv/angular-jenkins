@@ -1,11 +1,27 @@
-<div id="ipk">
-<div class="degussa-form-group">
+<div id="ipk" class="card card-body" style="padding:20px 0; background-color: #F2F2F2;">
+<h3>IPK Antrag</h3>
+  <form>
 
-  <label class="degussa-label">
-    Vorname
-  </label>
-  <input class="degussa-form-control" name="firstname"/>
-</div>
+  <div class="degussa-form-group">
+
+    <label class="degussa-label">
+      Vorname
+    </label>
+    <input class="degussa-form-control" name="firstname"/>
+  </div>
+
+  <div class="degussa-form-group">
+    <label class="degussa-label" for="exampleInputEmail1">Email address</label>
+    <input type="email" class="degussa-form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <button class="degussa-btn degussa-btn-primary height-large gold"
+          id="_com_liferay_login_web_portlet-id-1c"
+          type="button">
+      <span class="degussa-btn-label">Absenden</span>
+  </button>
+
+</form>
 </div>
 
 <router-outlet></router-outlet>
