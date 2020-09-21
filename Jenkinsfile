@@ -21,6 +21,7 @@ pipeline {
             }
         }
         stage('docker') {
+            agent any
             steps {
                 sh 'docker build . -t angular-jenkins:latest'
                 sh 'docker run -d -p 80:80 angular-jenkins:latest'
