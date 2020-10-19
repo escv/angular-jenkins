@@ -20,15 +20,15 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        stage('docker') {
-            agent {
-                label 'master'
-            }
-            steps {
-                sh 'docker build . -t angular-jenkins:latest'
-                sh 'docker run -d -p 80:80 angular-jenkins:latest'
-            }
-        }
+        //stage('docker') {
+        //    agent {
+        //        label 'master'
+        //    }
+        //    steps {
+        //        sh 'docker build . -t angular-jenkins:latest'
+        //        sh 'docker run -d -p 80:80 angular-jenkins:latest'
+        //    }
+        //}
     }
     post {
         always {
